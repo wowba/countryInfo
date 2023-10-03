@@ -75,9 +75,7 @@ const SearchInput = styled.input`
   border: none;
   border-radius: 0.5rem;
 
-  &::placeholder{
-    padding-left: 5rem;
-  }
+  padding-left: 5rem;
 `
 
 const SelectRegion = styled.select`
