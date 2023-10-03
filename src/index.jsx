@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
 
 import App from './App';
-import NunitoSans from './NunitoSans.ttf'
+import NunitoSans from './asset/NunitoSans.ttf'
 
 const GlobalStyle = createGlobalStyle`
 
