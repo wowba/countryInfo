@@ -1,4 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
+
+import App from './App';
 
 const GlobalStyle = createGlobalStyle`
   *{margin:0;padding:0;font:inherit;color:inherit;}
@@ -11,4 +16,12 @@ const GlobalStyle = createGlobalStyle`
   table {border-collapse:collapse;border-spacing:0}
 `
 
-export default GlobalStyle
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <GlobalStyle />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
