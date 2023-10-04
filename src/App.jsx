@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { Main } from "./pages/Main";
 
 import { Header } from "./components/Header";
+import { Main } from "./pages/Main";
+import { Detail } from "./pages/Detail";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Main} />
+        <Route path="*" Component={Detail}></Route>
       </Routes>
     </>
   );
