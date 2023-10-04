@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Header } from '../components/Header'
+import { MainContentBox } from '../components/MainContentBox'
 import { ReactComponent as LogoIcon } from '../asset/search.svg'
 
 export const Main = () => {
@@ -17,10 +18,11 @@ export const Main = () => {
               <SearchInput placeholder='Search for a country...' />
             </SearchInputBox>
             <SelectRegion>
-              <option value="" disabled selected>Filter by Region</option>
+              <option value="" hidden defaultValue>Filter by Region</option>
               <option value="Africa">Africa</option>
             </SelectRegion>
           </MainFilter>
+          <MainContentBox />
         </div>
       </MainLayout>
     </>
