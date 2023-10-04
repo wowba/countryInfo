@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import darkMode from '../asset/dark_mode.svg'
+import { ReactComponent as DarkModeIcon } from '../asset/dark_mode.svg'
 
 export const Header = () => {
   return (
@@ -11,7 +11,7 @@ export const Header = () => {
           Where in the world?
         </HeaderTitle>
         <DarkModeBox>
-          <img src={darkMode} alt="" />
+          <DarkModeImg />
           <p>Dark Mode</p>
         </DarkModeBox>
       </div>
@@ -36,7 +36,12 @@ const HeaderLayout = styled.div`
     height: 5rem;
 
     max-width: 1440px;
+    padding: 0 3rem 0 3rem;
   }
+`
+
+const DarkModeImg = styled(DarkModeIcon)`
+  fill: hsl(200, 15%, 40%);
 `
 
 const HeaderTitle = styled.p`

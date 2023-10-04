@@ -42,6 +42,7 @@ const MainLayout = styled.div`
     flex-grow: 1;
 
     max-width: 1440px;
+    padding: 0 3rem 0 3rem;
   }
 `
 
