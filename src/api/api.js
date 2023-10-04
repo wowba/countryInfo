@@ -6,7 +6,7 @@ const getData = () => {
 
 const getDetail = (name) => {
   const detail = data.filter((item) => {
-    if (item.name.toLowerCase() === name) return item
+    if (item.name === decodeURI(name)) return item
   })
   return detail[0]
 }

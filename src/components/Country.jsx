@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 export const Country = ({ props }) => {
 
   const { name, population, region, capital, flag} = props
+
+  const navigate = useNavigate()
+
   return (
-    <CountryLayout>
+    <CountryLayout onClick={() => navigate(`/${name}`)}>
       <CountryImg src={flag} alt="" />
       <CountryInfoBox>
         <CountryName>{name}</CountryName>
@@ -35,6 +39,7 @@ const CountryLayout = styled.div`
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   &:hover {
     box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5); 
+    cursor: pointer;
   }
 `
 
