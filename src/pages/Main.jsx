@@ -73,6 +73,7 @@ const SearchInput = styled.input`
 
   border: none;
   border-radius: 0.5rem;
+  box-shadow: 0 0 8px rgba(33,33,33,.2);
 
   padding-left: 5rem;
 `
@@ -85,4 +86,5 @@ const SelectRegion = styled.select`
   border: none;
   border-radius: 0.5rem;
   border-right: 16px solid transparent;
+  box-shadow: 0 0 8px rgba(33,33,33,.2);
 `
