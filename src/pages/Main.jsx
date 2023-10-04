@@ -7,25 +7,22 @@ import { ReactComponent as LogoIcon } from '../asset/search.svg'
 
 export const Main = () => {
   return (
-    <>
-      <Header />
-      <MainLayout>
-        <div>
-          <MainFilter>
-            <SearchInputBox>
-              {/* <SearchInputImg src={searchImg} alt="" /> */}
-              <SearchImg />
-              <SearchInput placeholder='Search for a country...' />
-            </SearchInputBox>
-            <SelectRegion>
-              <option value="" hidden defaultValue>Filter by Region</option>
-              <option value="Africa">Africa</option>
-            </SelectRegion>
-          </MainFilter>
-          <MainContentBox />
-        </div>
-      </MainLayout>
-    </>
+    <MainLayout>
+      <div>
+        <MainFilter>
+          <SearchInputBox>
+            {/* <SearchInputImg src={searchImg} alt="" /> */}
+            <SearchImg />
+            <SearchInput placeholder='Search for a country...' />
+          </SearchInputBox>
+          <SelectRegion>
+            <option value="" hidden defaultValue>Filter by Region</option>
+            <option value="Africa">Africa</option>
+          </SelectRegion>
+        </MainFilter>
+        <MainContentBox />
+      </div>
+    </MainLayout>
   )
 }
 
