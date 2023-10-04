@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Header } from '../components/Header'
 import { MainContentBox } from '../components/MainContentBox'
 import { ReactComponent as LogoIcon } from '../asset/search.svg'
 
