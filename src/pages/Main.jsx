@@ -72,7 +72,7 @@ const SearchImg = styled(LogoIcon)`
 `
 
 const SearchInput = styled.input`
-  width: 25rem;
+  width: 32rem;
   height: 3rem;
 
   border: none;
@@ -82,7 +82,7 @@ const SearchInput = styled.input`
 `
 
 const SelectRegion = styled.select`
-  width: 11rem;
+  width: 14rem;
   height: 3rem;
   padding-left: 1rem;
 
