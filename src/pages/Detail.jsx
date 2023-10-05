@@ -92,7 +92,7 @@ const DetailLayout = styled.div`
   display: flex;
   justify-content: center;
 
-  background-color: hsl(0, 0%, 96%);
+  background-color: ${({ theme }) => theme.mode.backgroundColor};
   height: 100vh;
 
   & > div {
@@ -110,7 +110,7 @@ const DetailWidthBox = styled.div`
 `
 
 const BackBtnBox = styled.div`
-  background-color: hsl(0, 0%, 100%);
+  background-color: ${({ theme }) => theme.mode.elementColor};
   width: 10rem;
   height: 3rem;
   margin: 5rem 0 5rem 0;

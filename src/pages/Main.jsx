@@ -30,7 +30,7 @@ const MainLayout = styled.div`
   justify-content: center;
 
   height: auto;
-  background-color: hsl(0, 0%, 96%);
+  background-color: ${({ theme }) => theme.mode.backgroundColor};
 
   padding: 3rem 0 3rem 0;
 
@@ -74,7 +74,7 @@ const SearchInput = styled.input`
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 0 8px rgba(33,33,33,.2);
-
+  background-color: ${({ theme }) => theme.mode.elementColor};
   padding-left: 5rem;
 `
 
@@ -87,4 +87,5 @@ const SelectRegion = styled.select`
   border-radius: 0.5rem;
   border-right: 16px solid transparent;
   box-shadow: 0 0 8px rgba(33,33,33,.2);
+  background-color: ${({ theme }) => theme.mode.elementColor};
 `

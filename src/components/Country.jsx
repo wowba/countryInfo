@@ -31,7 +31,7 @@ export const Country = ({ props }) => {
 }
 
 const CountryLayout = styled.div`
-  background-color: hsl(0, 0%, 100%);
+  background-color: ${({ theme }) => theme.mode.elementColor};;
 
   border-radius: 0.5rem;
   box-shadow: 0 0 8px rgba(33,33,33,.2); 

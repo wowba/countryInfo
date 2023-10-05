@@ -1,16 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRecoilState } from 'recoil'
 
 import { ReactComponent as DarkModeIcon } from '../asset/dark_mode.svg'
+import themeState from '../atom/themeState'
 
 export const Header = () => {
+
+  const [themeValue, setThemeState] = useRecoilState(themeState)
+
   return (
     <HeaderLayout>
       <div>
         <HeaderTitle>
           Where in the world?
         </HeaderTitle>
-        <DarkModeBox>
+        <DarkModeBox onClick={() => setThemeState(!themeValue)}>
           <DarkModeImg />
           <p>Dark Mode</p>
         </DarkModeBox>
@@ -23,8 +28,8 @@ const HeaderLayout = styled.div`
   display: flex;
   justify-content: center;
 
-  border-bottom: 3px solid hsl(0, 0%, 90%);
-  background-color: hsl(0, 0%, 100%);
+  border-bottom: 3px solid ${({ theme }) => theme.mode.borderColor};
+  background-color: ${({ theme }) => theme.mode.elementColor};
 
   & > div {
     display: flex;
@@ -57,4 +62,8 @@ const DarkModeBox = styled.div`
 
   font-weight: 600;
   color: hsl(200, 15%, 40%);
+
+  &:hover {
+    cursor: pointer;
+  }
 `

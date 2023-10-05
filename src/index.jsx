@@ -39,10 +39,10 @@ root.render(
   <React.StrictMode>
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+          <GlobalStyle />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>
