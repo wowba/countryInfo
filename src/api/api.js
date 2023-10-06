@@ -1,14 +1,21 @@
 import data from './data.json';
 
-const getData = () => {
-  return data
-};
-
 const getDetail = (name) => {
-  const detail = data.filter((item) => {
-    if (item.name === decodeURI(name)) return item
+  const detail = data.filter(item => {
+    if (item.name === decodeURI(name)) return true
+    return false
   })
   return detail[0]
 }
 
-export { getData, getDetail };
+const getSearch = (name) => {
+  if (name === "") return data
+
+  const result = data.filter(item => {
+    if (item.name.toLowerCase().includes(name)) return item
+    return false
+  })
+  return result
+}
+
+export { getDetail, getSearch };

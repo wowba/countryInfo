@@ -1,10 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useQuery } from 'react-query';
 
+import { getSearch } from '../api/api'
 import { MainContentBox } from '../components/MainContentBox'
 import { ReactComponent as LogoIcon } from '../asset/search.svg'
 
 export const Main = () => {
+
+  const [searchKeyword, setSearchKeyword] = useState("")
+
+  const { data, isLoading, error, refetch } = useQuery('useGetData', () => getSearch(searchKeyword))
+
+  const handleInput = (e) => {
+    setSearchKeyword(e.target.value)
+  }
+
+  const handleSearch = (e) => {
+    if (e.code === "Enter") {
+      console.log(e.target.value)
+      refetch()
+    }
+  }
+
   return (
     <MainLayout>
       <div>
@@ -12,14 +30,14 @@ export const Main = () => {
           <SearchInputBox>
             {/* <SearchInputImg src={searchImg} alt="" /> */}
             <SearchImg />
-            <SearchInput placeholder='Search for a country...' />
+            <SearchInput placeholder='Search for a country...' value={searchKeyword} onChange={e => handleInput(e)} onKeyUp={e => handleSearch(e)}/>
           </SearchInputBox>
           <SelectRegion>
             <option value="" hidden defaultValue>Filter by Region</option>
             <option value="Africa">Africa</option>
           </SelectRegion>
         </MainFilter>
-        <MainContentBox />
+        {!isLoading && !error ? <MainContentBox data={data} /> : null}
       </div>
     </MainLayout>
   )

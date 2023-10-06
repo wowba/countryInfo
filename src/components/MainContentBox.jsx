@@ -1,15 +1,9 @@
 import React from 'react'
-import { useQuery } from 'react-query';
 import styled from 'styled-components';
 
-import { getData } from '../api/api'
 import { Country } from './Country';
 
-export const MainContentBox = () => {
-
-  const { data, isLoading, error } = useQuery('useGetData', getData)
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
+export const MainContentBox = ({data}) => {
 
   return (
     <MainContentBoxLayout>
